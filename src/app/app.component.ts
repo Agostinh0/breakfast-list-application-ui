@@ -18,5 +18,9 @@ export class AppComponent {
   adicionarItem(){
     this.router.navigate(['adicionar']);
   }
+
+  listarFuncionarios(){
+    this.router.navigate(['listarFuncionarios']);
+  }
     
 }

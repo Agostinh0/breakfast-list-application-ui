@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../../models/Item';
 import { Router } from '@angular/router';
-import { Item } from 'src/app/models/Item';
 import { ItemServiceService } from 'src/app/Service/item-service.service';
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  selector: 'app-associar-com-funcionario',
+  templateUrl: './associar-com-funcionario.component.html',
+  styleUrls: ['./associar-com-funcionario.component.css']
 })
-export class EditarComponent implements OnInit {
+export class AssociarComFuncionarioComponent implements OnInit {
 
   item :Item;
   constructor(private router:Router, private service:ItemServiceService) { }
 
   ngOnInit(): void {
-    this.atualizarNome()
+    this.associarComFuncionario();
   }
 
-  atualizarNome(){
+  associarComFuncionario(){
     let id = localStorage.getItem("id");
     this.service.getItemId(+id)
       .subscribe(data => {
@@ -25,11 +25,11 @@ export class EditarComponent implements OnInit {
       })
   }
 
-  confirmarAtualizacaoNome(item:Item){
-    this.service.updateItemName(item)
+  confirmarAssociacao(item:Item){
+    this.service.updateItemEmployee(item)
       .subscribe(data=>{
         this.item = data;
-        alert("Nome do item alterado com sucesso!");
+        alert("CPF do responsável alterado com sucesso!");
         this.router.navigate(["listar"]);
       })
   }

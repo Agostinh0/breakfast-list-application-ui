@@ -1,16 +1,16 @@
 <div class="container col-md-6">
     <div class="card">
         <div class="card-header">
-            <h3>Atualizar nome do item</h3>
+            <h3>Editar nome do funcionário</h3>
         </div>
         <div class="card-body">
             <form action="" >
                 <div class="form-group">
                     <label for="">Nome: </label>
-                    <input [(ngModel)]="item.nome" name = "name" type="text" class="form-control">
+                    <input [(ngModel)]="funcionario.nome" name = "name" type="text" class="form-control">
                 </div>
                 <br>
-                <button (click)="confirmarAtualizacaoNome(item)" class="btn btn-success">Atualizar</button>
+                <button (click)="confirmarAtualizacaoNome(funcionario)" class="btn btn-success">Atualizar</button>
             </form>
         </div>
     </div>

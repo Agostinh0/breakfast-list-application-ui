@@ -18,8 +18,8 @@
                         <td>{{item.nome}}</td>
                         <td>{{item.cpfFuncionario}}</td>
                         <td>
-                            <button (click)="atualizarNome(item)" class = "btn btn-warning">Editar nome</button>
-                            <button class="btn btn-info" style="margin-left: 10px;">Alterar responsável</button>
+                            <button (click)="editarNome(item)" class = "btn btn-warning">Editar nome</button>
+                            <button (click)="alterarResponsavel(item)" class="btn btn-info" style="margin-left: 10px;">Alterar responsável</button>
                             <button (click)="deletar(item)" class = "btn btn-danger" style="margin-left: 10px;">Remover</button>
                         </td>
                     </tr>
@@ -28,3 +28,5 @@
         </div>
     </div>
 </div>
+
+

@@ -20,15 +20,22 @@ export class ListarComponent implements OnInit {
      })
   }
 
-  atualizarNome(item:Item):void{
+  editarNome(item:Item):void{
     localStorage.setItem("id", item.id.toString());
     this.router.navigate(["editar"])
+  }
+
+  alterarResponsavel(item:Item):void{
+    localStorage.setItem("id", item.id.toString());
+    this.router.navigate(['associar'])
   }
 
   deletar(item: Item){
     this.service.deleteItem(item)
       .subscribe(data => {
-        this.items = this.items.filter(i => i! == item);
+        this.items = this.items.filter(function(items){
+          return items != item;
+        });
         alert("Item removido com sucesso!");
       })
   }
